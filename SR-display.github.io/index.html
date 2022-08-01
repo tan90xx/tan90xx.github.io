@@ -14,12 +14,35 @@
 
 
 <nav>
-    <h4>Contents:</h4>
+    <h4>Models:</h4>
         <p>
         <ul class='toc'>
-            <li><a href='#German'>German samples</a></li>
-            <li><a href='#English'>English samples</a></li>
-            <li><a href='#Video'>English sample video</a></li>
+            <li><a href='#AECNN'>AECNN samples</a></li>
+            <li><a href='#TFNet'>TFNet samples</a></li>
+            <li><a href='#AudioUNet'>AudioUNet sample</a></li>
+            <li><a href='#DNN-Ceptral'>DNN-Ceptral sample</a></li>
+            <li><a href='#DNN-BWE'>DNN-BWE sample</a></li>
+        </ul>
+        </p>
+    <h4>Loss:</h4>
+        <p>
+        <ul class='toc'>
+            <li><a href='#MAE'>MAE</a></li>
+            <li><a href='#MSE'>MSE</a></li>
+            <li><a href='#F'>F</a></li>
+            <li><a href='#RI'>RI</a></li>
+            <li><a href='#TF'>TF</a></li>
+            <li><a href='#RI-MAG'>RI-MAG</a></li>
+            <li><a href='#PCM'>PCM</a></li>
+            <li><a href='#T-PCM'>T-PCM</a></li>
+        </ul>
+        </p>
+    <h4>Robustness:</h4>
+        <p>
+        <ul class='toc'>
+            <li><a href='#Corpus Channels'>Corpus Channels</a></li>
+            <li><a href='#Downsampling Schemes'>Downsampling Schemes</a></li>
+            <li><a href='#Filter Types'>Filter Types</a></li>
         </ul>
         </p>
 </nav>
@@ -28,15 +51,15 @@
     <div class="jumbotron">
         <h2>Audio Super Resolution with Neural Networks</h2>
         <!-- <p>Volodymyr Kuleshov, Zayd S. Enam, Stefano Ermon</p> -->
-        <p class="abstract">Using deep convolutional neural networks to upsample audio signals such as speech or music.</p>
+        <p class="abstract">Using deep learning networks to upsample audio signals such as speech or music.</p>
         <p><a class="btn btn-primary" href="https://github.com/kuleshov/audio-super-res">Code</a> <a class="btn btn-primary" href="https://arxiv.org/abs/1708.00853">Paper</a></p> 
     </div>
 
-    <div id='German' class='section'>
-        <h2>German samples</h2>
+    <div id='AECNN' class='section'>
+        <h2>AECNN samples</h2>
     </div>
-    <div id='noisy_de' class='section'>
-        <h3>Noisy</h3>
+    <div id='timit_aecnn' class='section'>
+        <h3>TIMIT</h3>
       <div class="panel panel-default">
         <div class="panel-heading"><em>The difference in the rainbow depends considerably...</em> (Speaker p347, Utterance 021)</div>
         <div class="panel-body">
@@ -76,8 +99,8 @@
     <img src="./docs/test.png" width=1100/>
     </div>
 
-    <div id='WF_de' class='section'>
-        <h3>Wiener Filter (WF)</h3>
+    <div id='vctk_s_aecnn' class='section'>
+        <h3>VCTK (S)</h3>
 
       <div class="panel panel-default">
         <div class="panel-heading"><em>The difference in the rainbow depends considerably...</em> (Speaker p347, Utterance 021)</div>
@@ -118,8 +141,8 @@
     <img src="./docs/test.png" width=1100/>
     </div>
 
-    <div id='CLC_en' class='section'>
-        <h3>Complex Linear Coding (CLC)</h3>
+    <div id='vctk_m_aecnn' class='section'>
+        <h3>VCTK (M)</h3>
 
       <div class="panel panel-default">
         <div class="panel-heading"><em>The difference in the rainbow depends considerably...</em> (Speaker p347, Utterance 021)</div>
@@ -162,14 +185,52 @@
 
 
     <hr>
-
-    <div id='English' class='section'>
-        <h2>English samples</h2>
-        The English samples are also from the EUROM database. Howerver, neither english samples nor the speakers of these samples
-        were used for training. Note that the loudness of the english denoised samples was slightly improved.
+    <div id='TFNet' class='section'>
+        <h2>TFNet samples</h2>
     </div>
-    <div id='noisy_en' class='section'>
-        <h3>Noisy</h3>
+    <div id='timit_tfnet' class='section'>
+        <h3>TIMIT</h3>
+      <div class="panel panel-default">
+        <div class="panel-heading"><em>The difference in the rainbow depends considerably...</em> (Speaker p347, Utterance 021)</div>
+        <div class="panel-body">
+          <div class="audio">
+            <audio controls="">
+              <source src="https://raw.githubusercontent.com/kuleshov/audio-super-res/master/samples/msp/4/msp.1.4.hr.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p style="font-size:14px" align="center">High Resolution</p>
+          </div>
+          <div class="audio">
+            <audio controls="">
+              <source src="https://raw.githubusercontent.com/kuleshov/audio-super-res/master/samples/msp/4/msp.1.4.lr.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p style="font-size:14px" align="center">Low Resolution</p>
+          </div>
+          <div class="audio">
+            <audio controls="">
+              <source src="https://raw.githubusercontent.com/kuleshov/audio-super-res/master/samples/msp/4/msp.1.4.sp.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p style="font-size:14px" align="center">Cubic Baseline</p>
+          </div>
+          <div class="audio">
+            <audio controls="">
+              <source src="https://raw.githubusercontent.com/kuleshov/audio-super-res/master/samples/msp/4/msp.1.4.pr.wav" type="audio/wav" />
+              Your browser does not support the audio element.
+            </audio>
+            <p style="font-size:14px" align="center">Super Resolution</p>
+          </div>
+        </div>
+      </div>
+    </div>	
+
+    <div align="center">
+    <img src="./docs/test.png" width=1100/>
+    </div>
+
+    <div id='vctk_s_tfnet' class='section'>
+        <h3>VCTK (S)</h3>
 
       <div class="panel panel-default">
         <div class="panel-heading"><em>The difference in the rainbow depends considerably...</em> (Speaker p347, Utterance 021)</div>
@@ -210,9 +271,8 @@
     <img src="./docs/test.png" width=1100/>
     </div>
 
-
-    <div id='WF_en' class='section'>
-        <h3>Wiener Filter (WF)</h3>
+    <div id='vctk_m_tfnet' class='section'>
+        <h3>VCTK (M)</h3>
 
       <div class="panel panel-default">
         <div class="panel-heading"><em>The difference in the rainbow depends considerably...</em> (Speaker p347, Utterance 021)</div>
@@ -253,59 +313,12 @@
     <img src="./docs/test.png" width=1100/>
     </div>
 
-    <div id='CLC_en' class='section'>
-        <h3>Complex Linear Coding (CLC)</h3>
-
-      <div class="panel panel-default">
-        <div class="panel-heading"><em>The difference in the rainbow depends considerably...</em> (Speaker p347, Utterance 021)</div>
-        <div class="panel-body">
-          <div class="audio">
-            <audio controls="">
-              <source src="https://raw.githubusercontent.com/kuleshov/audio-super-res/master/samples/msp/4/msp.1.4.hr.wav" type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
-            <p style="font-size:14px" align="center">High Resolution</p>
-          </div>
-          <div class="audio">
-            <audio controls="">
-              <source src="https://raw.githubusercontent.com/kuleshov/audio-super-res/master/samples/msp/4/msp.1.4.lr.wav" type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
-            <p style="font-size:14px" align="center">Low Resolution</p>
-          </div>
-          <div class="audio">
-            <audio controls="">
-              <source src="https://raw.githubusercontent.com/kuleshov/audio-super-res/master/samples/msp/4/msp.1.4.sp.wav" type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
-            <p style="font-size:14px" align="center">Cubic Baseline</p>
-          </div>
-          <div class="audio">
-            <audio controls="">
-              <source src="https://raw.githubusercontent.com/kuleshov/audio-super-res/master/samples/msp/4/msp.1.4.pr.wav" type="audio/wav" />
-              Your browser does not support the audio element.
-            </audio>
-            <p style="font-size:14px" align="center">Super Resolution</p>
-          </div>
-        </div>
-      </div>
-    </div>	
-    <br>	
-    <br>
-
-    <div align="center">
-    <img src="./docs/test.png" width=1100/>
-    </div>
-	
     <hr>
 
     <div id='Video' class='section'>
-        <h2>English sample video</h2>
+        <h2>Sample video</h2>
     </div>
 
-    <div class='section'>
-        <iframe src="//player.bilibili.com/player.html?aid=587143603&bvid=BV1Rz4y1172v&cid=311054556&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-    </div>
 
     <hr>
     <div id='refs' class='section'>
